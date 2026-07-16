@@ -6,6 +6,7 @@ import { siteContent } from '@/lib/content';
 
 export default function Footer() {
   const footer = siteContent.footer;
+  const footerData = content.footer;
 
   return (
     <footer className="w-full bg-panesso-black text-panesso-white border-t border-panesso-dark-gray">
