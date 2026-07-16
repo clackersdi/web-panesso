@@ -31,8 +31,6 @@ export default function HeroSection() {
     return () => clearInterval(interval);
   }, [showContent]);
 
-  const address = siteContent.footer.sections.contacto;
-
   return (
     <section id="inicio" className="relative w-auto bg-black text-panesso-white overflow-hidden py-12">
       {/* Subtle diagonal gradient */}
