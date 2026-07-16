@@ -76,7 +76,7 @@ export default function Footer() {
         {footer.social && footer.social.length > 0 && (
           <div className="mb-8 pb-8 border-b border-panesso-dark-gray">
             <div className="flex gap-6">
-              {footer.sections.socials.map((social: any, index) => (
+              {footer.social.map((social: any, index) => (
                 <a
                   key={index}
                   href={social.url}
