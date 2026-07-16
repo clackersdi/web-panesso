@@ -6,8 +6,7 @@ import { siteContent } from '@/lib/content';
 
 export default function Footer() {
   const footer = siteContent.footer;
-  const footerData = content.footer;
-
+  
   return (
     <footer className="w-full bg-panesso-black text-panesso-white border-t border-panesso-dark-gray">
       <Container className="py-16">
@@ -77,7 +76,7 @@ export default function Footer() {
         {footer.social && footer.social.length > 0 && (
           <div className="mb-8 pb-8 border-b border-panesso-dark-gray">
             <div className="flex gap-6">
-              {footerData.sections.socials.map((social: any, index) => (
+              {footer.sections.socials.map((social: any, index) => (
                 <a
                   key={index}
                   href={social.url}
