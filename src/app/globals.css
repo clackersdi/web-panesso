@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=Alexandria:wght@100;300;400;500;700;900&family=Nunito:wght@200;300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-alexandria: 'Alexandria', sans-serif;
+  --font-nunito: 'Nunito', sans-serif;
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --color-dark-gray: #404040;
+  --color-medium-gray: #808080;
+  --color-light-gray: #c0c0c0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply font-nunito bg-panesso-black text-panesso-white;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply font-alexandria font-bold;
+  line-height: 1.2;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  @apply font-nunito;
+  border: none;
+  cursor: pointer;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-black);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-dark-gray);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-medium-gray);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes wave1 {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes wave2 {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes wave3 {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@layer components {
+  .animate-fade-in {
+    @apply animate-pulse;
+    animation: fadeIn 0.6s ease-in-out;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.8s ease-out;
+  }
+
+  .animate-bounce {
+    animation: bounce 2s infinite;
+  }
+
+  /* Typography Scale */
+  h1 {
+    font-size: clamp(1.875rem, 5vw, 3.5rem);
+  }
+
+  h2 {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+  }
+
+  h3 {
+    font-size: clamp(1.25rem, 3vw, 1.875rem);
+  }
+
+  h4 {
+    @apply text-2xl;
+  }
+
+  /* Responsive Padding */
+  .px-responsive {
+    padding-left: clamp(1rem, 5vw, 2rem);
+    padding-right: clamp(1rem, 5vw, 2rem);
+  }
+
+  .py-responsive {
+    padding-top: clamp(2rem, 10vw, 4rem);
+    padding-bottom: clamp(2rem, 10vw, 4rem);
+  }
+
+  /* Utilities */
+  .text-gradient {
+    background: linear-gradient(135deg, var(--color-white), var(--color-light-gray));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .shadow-subtle {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .shadow-medium {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  .shadow-heavy {
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Transitions */
+  .transition-smooth {
+    transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Focus States */
+  button:focus-visible,
+  a:focus-visible {
+    outline: 2px solid var(--color-light-gray);
+    outline-offset: 2px;
+  }
+}
+
+/* Mobile Optimizations */
+@media (max-width: 640px) {
+  h1 {
+    font-size: 1.875rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+  }
+
+  body {
+    font-size: 0.95rem;
+  }
+}
+
+/* Print Styles */
+@media print {
+  body {
+    background-color: white;
+    color: black;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+}
