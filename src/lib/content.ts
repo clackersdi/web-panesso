@@ -1,7 +1,13 @@
 export const siteContent = {
   company: {
     name: 'PANESSO MERCADO ABOGADOS',
+    legalName: 'PANESSO MERCADO S.A.S.',
+    nit: '901.606.069-8',
     tagline: 'Asesoría legal integral para transformar su empresa',
+    linkedin: 'https://www.linkedin.com/company/panesso-mercado-abogados/',
+  },
+  form: {
+    recipientEmails: ['hernan@panessomercado.com', 'maria@panessomercado.com'],
   },
   navigation: [
     { label: 'Inicio', href: '/' },
@@ -24,8 +30,8 @@ export const siteContent = {
   partners: [
     {
       id: 1,
-      name: 'Hernán Panesso',
-      title: 'Fundador',
+      name: 'Hernán Antonio Panesso Mercado',
+      title: 'Socio',
       specialties: 'Derecho de la Competencia, Privacidad de Datos, Telecomunicaciones, Regulación Económica',
       image: '/images/partners/hernan.png',
       modalImage: '/images/practice-areas/socios.png',
@@ -57,7 +63,7 @@ export const siteContent = {
     {
       id: 2,
       name: 'María Esther Panesso Mercado',
-      title: 'Socia Fundadora – Directora Jurídica',
+      title: 'Socia',
       specialties: 'Derecho de Familia, Derecho de Sucesiones, Derecho Civil, Planeación Patrimonial',
       image: '/images/partners/esther.png',
       modalImage: '/images/practice-areas/imagen-familia.png',
@@ -102,7 +108,7 @@ export const siteContent = {
     {
       id: 1,
       title: 'Derecho de la Competencia',
-      description: 'Asesoría especializada en asuntos de competencia económica, prácticas restrictivas, concentraciones empresariales y regulación de mercados.',
+      description: 'Asesoría legal especializada en derecho de la competencia económica. Nos encargamos de prácticas restrictivas, concentraciones empresariales, regulación de mercados y defensa ante la Superintendencia de Industria y Comercio (SIC) en Bogotá.',
       icon: '📊',
       image: '',
       services: [
@@ -119,7 +125,7 @@ export const siteContent = {
     {
       id: 2,
       title: 'Privacidad y Protección de Datos',
-      description: 'Compliance en privacidad de datos personales, HABEAS DATA, seguridad de información y protección de derechos digitales.',
+      description: 'Servicios legales en privacidad y protección de datos personales. Asesoría en HABEAS DATA, cumplimiento normativo, seguridad de información y defensa de derechos digitales conforme a la Ley 1581 de 2012.',
       icon: '🔒',
       image: '',
       services: [
@@ -136,7 +142,7 @@ export const siteContent = {
     {
       id: 3,
       title: 'Derecho del Consumo',
-      description: 'Asesoría en protección al consumidor, publicidad comercial, seguridad de productos y relaciones de consumo.',
+      description: 'Asesoría legal integral en protección al consumidor, publicidad comercial, seguridad de productos, relaciones de consumo e defensa de derechos del consumidor ante la Superintendencia de Industria y Comercio.',
       icon: '🛍️',
       image: '',
       services: [
@@ -408,15 +414,22 @@ export const siteContent = {
           { label: 'Contacto', href: '/#contacto' },
         ],
       },
+      legal: {
+        title: 'Legal',
+        links: [
+          { label: 'Política de Datos', href: '/politica-de-tratamiento-de-datos' },
+          { label: 'Aviso de Privacidad', href: '/aviso-de-privacidad' },
+        ],
+      },
       contacto: {
         title: 'Contacto',
         address: 'Calle 95 # 15-33, Oficina 204',
         city: 'Bogotá D.C., Colombia',
-        phone: '+57 (1) 3133900829',
-        email: 'contacto@panessomercado.com',
+        phone: '(+57) 313 3900829',
+        email: 'notificaciones@panessomercado.com',
       },
     },
-    social: [],
+    social: [] as { platform: string; url: string }[],
     copyright: '© 2024 Panesso Mercado Abogados. Todos los derechos reservados.',
   },
   resources: {

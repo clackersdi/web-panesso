@@ -1,0 +1,52 @@
+{
+  "nav": {
+    "inicio": "Home",
+    "servicios": "Services",
+    "nosotros": "About Us",
+    "contacto": "Contact",
+    "agenda": "Schedule a consultation"
+  },
+  "hero": {
+    "title1": "We transform difficult moments into legal solutions that allow you to move forward.",
+    "title2": "We protect what matters most.",
+    "title3": "We turn legal challenges into strategic solutions.",
+    "title4": "Trust is built with results.",
+    "title5": "Every decision deserves the right support.",
+    "title6": "Your peace of mind begins with a solid legal strategy.",
+    "subtitle": "We provide comprehensive legal advice and representation to individuals, families and companies, with a strategic, personal and human approach. We accompany each case with excellence, commitment and legal rigor to offer clear solutions, protect your interests and build confidence in every decision.",
+    "cta": "Schedule a consultation"
+  },
+  "ubicacion": {
+    "title": "Location",
+    "address": "Calle 95 # 15-33, Oficina 204 — Bogotá D.C., Colombia"
+  },
+  "nosotros": {
+    "title": "About Us"
+  },
+  "cta": {
+    "title": "Do you have a legal or regulatory challenge?",
+    "description": "Let us help you navigate legal complexity and achieve your business objectives with strategy and excellence.",
+    "button": "Contact Us"
+  },
+  "contacto": {
+    "title": "Schedule a Consultation",
+    "subtitle": "Complete the form and we will contact you as soon as possible.",
+    "nombre": "Full Name",
+    "email": "Email Address",
+    "celular": "Phone Number",
+    "area": "Practice Area",
+    "mensaje": "Message",
+    "autorizacion": "I authorize PANESSO MERCADO S.A.S. to process my personal data to address my contact request, in accordance with the Privacy Policy and Personal Data Processing Policy.",
+    "enviar": "Send Request",
+    "areaOpcional": "Select an area (optional)",
+    "placeholder": "Your name"
+  },
+  "footer": {
+    "razonSocial": "Legal Name",
+    "nit": "NIT",
+    "direccion": "Address",
+    "telefono": "Phone",
+    "email": "Email",
+    "derechos": "All rights reserved."
+  }
+}

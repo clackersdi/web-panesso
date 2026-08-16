@@ -12,10 +12,10 @@ export default function Home() {
     <main>
       <Navbar />
       <HeroSection />
-      <LocationMapSection />
       <PartnersSection />
       <CTASection />
       <ContactFormSection />
+      <LocationMapSection />
       <Footer />
       <FloatingWhatsAppButton />
     </main>

@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Container from '../Container';
 import Button from '../Button';
+import LanguageSelector from '../LanguageSelector';
 import { siteContent } from '@/lib/content';
 
 export default function Navbar() {
@@ -53,8 +54,9 @@ export default function Navbar() {
             ))}
           </div>
 
-          {/* CTA Button */}
-          <div className="hidden md:flex items-center space-x-4">
+          {/* CTA Button and Language Selector */}
+          <div className="hidden md:flex items-center space-x-6">
+            <LanguageSelector />
             <Button variant="outlined" href="#contacto">Agenda tu consulta</Button>
           </div>
 

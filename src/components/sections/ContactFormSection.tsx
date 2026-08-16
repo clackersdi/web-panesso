@@ -12,6 +12,7 @@ export default function ContactFormSection() {
     area: '',
     mensaje: '',
   });
+  const [authorized, setAuthorized] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
@@ -24,12 +25,17 @@ export default function ContactFormSection() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Por ahora solo mostramos mensaje de éxito
-    // Luego puedes conectar a un backend o servicio de email
-    console.log('Formulario enviado:', formData);
+    if (!authorized) return;
+    // Enviar a los emails de Hernán y María
+    const recipients = siteContent.form.recipientEmails;
+    console.log('Formulario enviado a:', recipients);
+    console.log('Datos del formulario:', formData);
+
+    // TODO: Conectar a un backend o servicio de email para enviar realmente los datos
     setSubmitted(true);
     setTimeout(() => {
       setFormData({ nombre: '', email: '', celular: '', area: '', mensaje: '' });
+      setAuthorized(false);
       setSubmitted(false);
     }, 3000);
   };
@@ -139,10 +145,47 @@ export default function ContactFormSection() {
                 />
               </div>
 
+              {/* Autorización de Datos Personales */}
+              <div className="flex items-start gap-3">
+                <input
+                  type="checkbox"
+                  id="autorizado"
+                  checked={authorized}
+                  onChange={(e) => setAuthorized(e.target.checked)}
+                  className="mt-1 w-4 h-4 accent-panesso-white cursor-pointer flex-shrink-0"
+                />
+                <label htmlFor="autorizado" className="font-nunito text-xs sm:text-sm text-panesso-light-gray leading-relaxed cursor-pointer">
+                  Autorizo a PANESSO MERCADO S.A.S. el tratamiento de mis datos personales para atender mi solicitud de contacto, en los términos del{' '}
+                  <a
+                    href="/aviso-de-privacidad"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-panesso-white hover:text-panesso-light-gray underline transition-colors"
+                  >
+                    Aviso de Privacidad
+                  </a>
+                  {' '}y de la{' '}
+                  <a
+                    href="/politica-de-tratamiento-de-datos"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-panesso-white hover:text-panesso-light-gray underline transition-colors"
+                  >
+                    Política de Tratamiento de Datos Personales
+                  </a>
+                  .
+                </label>
+              </div>
+
               {/* Submit Button */}
               <button
                 type="submit"
-                className="w-full bg-panesso-white text-panesso-black font-nunito font-semibold text-sm uppercase tracking-widest py-4 hover:bg-panesso-light-gray transition-all duration-300"
+                disabled={!authorized}
+                className={`w-full font-nunito font-semibold text-sm uppercase tracking-widest py-4 transition-all duration-300 ${
+                  authorized
+                    ? 'bg-panesso-white text-panesso-black hover:bg-panesso-light-gray cursor-pointer'
+                    : 'bg-panesso-medium-gray text-panesso-dark-gray cursor-not-allowed opacity-50'
+                }`}
               >
                 Enviar Solicitud
               </button>

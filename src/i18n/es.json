@@ -1,0 +1,52 @@
+{
+  "nav": {
+    "inicio": "Inicio",
+    "servicios": "Servicios",
+    "nosotros": "Nosotros",
+    "contacto": "Contacto",
+    "agenda": "Agenda tu consulta"
+  },
+  "hero": {
+    "title1": "Transformamos momentos difíciles en soluciones legales que te permiten avanzar.",
+    "title2": "Protegemos lo que más importa.",
+    "title3": "Convertimos desafíos legales en soluciones estratégicas.",
+    "title4": "La confianza se construye con resultados.",
+    "title5": "Cada decisión merece el respaldo correcto.",
+    "title6": "Su tranquilidad comienza con una estrategia legal sólida.",
+    "subtitle": "Brindamos asesoría y representación jurídica integral a personas, familias y empresas, con un enfoque estratégico, humano y personalizado. Acompañamos cada caso con excelencia, compromiso y rigor legal para ofrecer soluciones claras, proteger sus intereses y generar confianza en cada decisión.",
+    "cta": "Agenda tu consulta"
+  },
+  "ubicacion": {
+    "title": "Ubicación",
+    "address": "Calle 95 # 15-33, Oficina 204 — Bogotá D.C., Colombia"
+  },
+  "nosotros": {
+    "title": "Nosotros"
+  },
+  "cta": {
+    "title": "¿Tiene un desafío legal o regulatorio?",
+    "description": "Permítanos ayudarle a navegar la complejidad legal y alcanzar sus objetivos empresariales con estrategia y excelencia.",
+    "button": "Contáctenos"
+  },
+  "contacto": {
+    "title": "Agenda tu Consulta",
+    "subtitle": "Completa el formulario y nos pondremos en contacto contigo lo antes posible.",
+    "nombre": "Nombre Completo",
+    "email": "Correo Electrónico",
+    "celular": "Celular",
+    "area": "Área de Práctica",
+    "mensaje": "Mensaje",
+    "autorizacion": "Autorizo a PANESSO MERCADO S.A.S. el tratamiento de mis datos personales para atender mi solicitud de contacto, en los términos del Aviso de Privacidad y de la Política de Tratamiento de Datos Personales.",
+    "enviar": "Enviar Solicitud",
+    "areaOpcional": "Selecciona un área (opcional)",
+    "placeholder": "Tu nombre"
+  },
+  "footer": {
+    "razonSocial": "Razón Social",
+    "nit": "NIT",
+    "direccion": "Dirección",
+    "telefono": "Teléfono",
+    "email": "Email",
+    "derechos": "Todos los derechos reservados."
+  }
+}
