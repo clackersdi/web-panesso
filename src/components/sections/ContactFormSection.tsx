@@ -14,6 +14,8 @@ export default function ContactFormSection() {
   });
   const [authorized, setAuthorized] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState('');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -23,21 +25,36 @@ export default function ContactFormSection() {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!authorized) return;
-    // Enviar a los emails de Hernán y María
-    const recipients = siteContent.form.recipientEmails;
-    console.log('Formulario enviado a:', recipients);
-    console.log('Datos del formulario:', formData);
+    if (!authorized || sending) return;
 
-    // TODO: Conectar a un backend o servicio de email para enviar realmente los datos
-    setSubmitted(true);
-    setTimeout(() => {
-      setFormData({ nombre: '', email: '', celular: '', area: '', mensaje: '' });
-      setAuthorized(false);
-      setSubmitted(false);
-    }, 3000);
+    setSending(true);
+    setError('');
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...formData, authorized }),
+      });
+
+      if (!response.ok) {
+        const data = await response.json().catch(() => ({}));
+        throw new Error(data.error || 'No se pudo enviar la solicitud.');
+      }
+
+      setSubmitted(true);
+      setTimeout(() => {
+        setFormData({ nombre: '', email: '', celular: '', area: '', mensaje: '' });
+        setAuthorized(false);
+        setSubmitted(false);
+      }, 3000);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'No se pudo enviar la solicitud.');
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -177,17 +194,22 @@ export default function ContactFormSection() {
                 </label>
               </div>
 
+              {/* Error Message */}
+              {error && (
+                <p className="font-nunito text-sm text-red-400">{error}</p>
+              )}
+
               {/* Submit Button */}
               <button
                 type="submit"
-                disabled={!authorized}
+                disabled={!authorized || sending}
                 className={`w-full font-nunito font-semibold text-sm uppercase tracking-widest py-4 transition-all duration-300 ${
-                  authorized
+                  authorized && !sending
                     ? 'bg-panesso-white text-panesso-black hover:bg-panesso-light-gray cursor-pointer'
                     : 'bg-panesso-medium-gray text-panesso-dark-gray cursor-not-allowed opacity-50'
                 }`}
               >
-                Enviar Solicitud
+                {sending ? 'Enviando...' : 'Enviar Solicitud'}
               </button>
             </form>
           )}

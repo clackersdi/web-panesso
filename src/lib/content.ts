@@ -4,7 +4,6 @@ export const siteContent = {
     legalName: 'PANESSO MERCADO S.A.S.',
     nit: '901.606.069-8',
     tagline: 'Asesoría legal integral para transformar su empresa',
-    linkedin: 'https://www.linkedin.com/company/panesso-mercado-abogados/',
   },
   form: {
     recipientEmails: ['hernan@panessomercado.com', 'maria@panessomercado.com'],

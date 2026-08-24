@@ -21,20 +21,20 @@ export default function PartnersSection() {
         </div>
 
         {/* Partners Grid */}
-        <div className="flex justify-center gap-12 mb-12 flex-wrap">
+        <div className="flex justify-center gap-12 mb-12 flex-wrap items-stretch">
           {siteContent.partners.map((partner) => (
             <button
               key={partner.id}
               onClick={() => setSelectedPartner(partner)}
-              className="cursor-pointer w-full max-w-xs text-left"
+              className="cursor-pointer w-full max-w-xs text-left flex"
             >
-              <Card variant="hover">
+              <Card variant="hover" className="flex flex-col h-full">
               {/* Partner Image */}
-              <div className="mb-6 h-auto overflow-hidden flex items-center justify-center">
+              <div className="mb-6 aspect-[4/5] overflow-hidden flex items-center justify-center bg-panesso-dark-gray">
                 <img
                   src={partner.image}
                   alt={partner.name}
-                  className="w-full h-auto"
+                  className="w-full h-full object-cover"
                 />
               </div>
 

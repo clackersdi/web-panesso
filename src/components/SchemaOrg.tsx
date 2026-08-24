@@ -19,9 +19,6 @@ export default function SchemaOrg() {
     },
     areaServed: 'CO',
     priceRange: '$$',
-    sameAs: [
-      'https://www.linkedin.com/company/panesso-mercado-abogados/',
-    ],
     founder: [
       {
         '@type': 'Person',
